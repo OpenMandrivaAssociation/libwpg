@@ -16,7 +16,7 @@ URL: http://libwpg.sf.net/
 Source: http://www.go-ooo.org/packages/SRC680/%{name}-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 License: LGPL
-BuildRequires: libwpd-0.8_8-devel
+BuildRequires: libwpd-devel >= 0.8.8
 BuildRequires: doxygen
 
 %description
