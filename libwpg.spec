@@ -24,7 +24,7 @@ libwpg is a library for reading and converting WPG images
 
 %package tools
 Summary: Tools to convert WPG images into other formats
-Group: Applications/Publishing
+Group: Publishing
 
 %description tools
 Tools to convert WPG images into other formats.
@@ -48,7 +48,7 @@ Includes and definitions for developing with libwpg.
 
 %package docs
 Summary: Documentation of libwpg API
-Group: Development/Documentation
+Group: Development/C++
 
 %description docs
 Documentation of libwpg API for developing with libwpg
