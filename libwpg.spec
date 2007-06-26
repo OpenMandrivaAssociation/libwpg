@@ -32,14 +32,14 @@ Currently supported: raw svg
 
 %package -n %{lib_name}
 Summary: Library for importing and converting Corel WordPerfect(tm) Graphics images
-Group: System Environment/Libraries
+Group: System/Libraries
 
 %description -n %{lib_name}
 libwpg is a library for reading and converting WPG images
 
 %package -n %{lib_name_devel}
 Summary: Files for developing with libwpg.
-Group: Development/Libraries
+Group: Development/C++
 Requires: %{libname}
 Requires: libwpd-devel >= 0.8.0
 
