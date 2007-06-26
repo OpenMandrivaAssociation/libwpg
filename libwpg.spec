@@ -1,4 +1,4 @@
-%define rel             2
+%define rel             3
 %define name            libwpg
 %define version         0.1.0~cvs20070608
 %define release         %mkrel %{rel}
