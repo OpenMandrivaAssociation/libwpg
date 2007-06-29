@@ -1,4 +1,4 @@
-%define rel             3
+%define rel             4
 %define name            libwpg
 %define version         0.1.0~cvs20070608
 %define release         %mkrel %{rel}
@@ -42,6 +42,7 @@ Summary: Files for developing with libwpg.
 Group: Development/C++
 Requires: %{lib_name}
 Requires: libwpd-devel >= 0.8.0
+Provides: libwpg-devel = %{version}-%{release}
 
 %description -n %{lib_name_devel}
 Includes and definitions for developing with libwpg.
