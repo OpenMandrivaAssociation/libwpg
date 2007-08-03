@@ -1,6 +1,7 @@
-%define rel             4
+%define rel             5
 %define name            libwpg
-%define version         0.1.0~cvs20070608
+%define ups_version     0.1.0~cvs20070608
+%define version         0.1.0.cvs20070608
 %define release         %mkrel %{rel}
 %define api_version     0.1
 %define lib_major       1
@@ -55,7 +56,7 @@ Group: Development/C++
 Documentation of libwpg API for developing with libwpg
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{ups_version}
 
 %build
 %configure
