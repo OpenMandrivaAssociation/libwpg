@@ -14,7 +14,7 @@ Version: %{version}
 Release: %{release}
 Group: Office
 URL: http://libwpg.sf.net/
-Source: http://www.go-ooo.org/packages/SRC680/%{name}-%{version}.tar.gz
+Source: http://www.go-ooo.org/packages/SRC680/%{name}-%{ups_version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 License: LGPL
 BuildRequires: libwpd-devel >= 0.8.8
