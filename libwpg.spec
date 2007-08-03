@@ -66,6 +66,9 @@ Documentation of libwpg API for developing with libwpg
 make install DESTDIR=%{buildroot}
 rm -rf %{buildroot}/%{_libdir}/libwpg*.la
 
+# Fix doc dir.
+mv %{buildroot}%{_docdir}/libwpg-{%{ups_version},%{version}}
+
 %clean
 rm -rf %{buildroot}
 
