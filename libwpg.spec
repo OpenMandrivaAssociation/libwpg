@@ -1,7 +1,7 @@
 %define rel             5
 %define name            libwpg
-%define ups_version     0.1.0~cvs20070608
-%define version         0.1.0.cvs20070608
+%define ups_version     0.1.0
+%define version         0.1.0
 %define release         %mkrel %{rel}
 %define api_version     0.1
 %define lib_major       1
@@ -10,6 +10,7 @@
 
 Name: %{name}
 Summary: Library for importing and converting Corel WordPerfect(tm) Graphics images
+Epoch: 1
 Version: %{version}
 Release: %{release}
 Group: Office
@@ -65,9 +66,6 @@ Documentation of libwpg API for developing with libwpg
 %install
 make install DESTDIR=%{buildroot}
 rm -rf %{buildroot}/%{_libdir}/libwpg*.la
-
-# Fix doc dir.
-mv %{buildroot}%{_docdir}/libwpg-{%{ups_version},%{version}}
 
 %clean
 rm -rf %{buildroot}
