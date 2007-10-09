@@ -40,7 +40,7 @@ Group: System/Libraries
 libwpg is a library for reading and converting WPG images
 
 %package -n %{lib_name_devel}
-Summary: Files for developing with libwpg.
+Summary: Files for developing with libwpg
 Group: Development/C++
 Requires: %{lib_name}
 Requires: libwpd-devel >= 0.8.0
