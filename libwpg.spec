@@ -1,7 +1,7 @@
-%define rel             6
+%define rel             1
 %define name            libwpg
-%define ups_version     0.1.0
-%define version         0.1.0
+%define ups_version     0.1.2
+%define version         0.1.2
 %define release         %mkrel %{rel}
 %define api_version     0.1
 %define lib_major       1
@@ -17,7 +17,7 @@ Group: Office
 URL: http://libwpg.sf.net/
 Source: http://www.go-ooo.org/packages/SRC680/%{name}-%{ups_version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
-License: LGPL
+License: LGPLv2+
 BuildRequires: libwpd-devel >= 0.8.8
 BuildRequires: doxygen
 
@@ -60,7 +60,7 @@ Documentation of libwpg API for developing with libwpg
 %setup -q -n %{name}-%{ups_version}
 
 %build
-%configure
+%configure2_5x
 %make
 
 %install
