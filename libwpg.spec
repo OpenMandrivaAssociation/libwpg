@@ -1,7 +1,7 @@
 %define rel             1
 %define name            libwpg
-%define ups_version     0.1.2
-%define version         0.1.2
+%define ups_version     0.1.3
+%define version         0.1.3
 %define release         %mkrel %{rel}
 %define api_version     0.1
 %define lib_major       1
@@ -15,7 +15,7 @@ Version: %{version}
 Release: %{release}
 Group: Office
 URL: http://libwpg.sf.net/
-Source: http://www.go-ooo.org/packages/SRC680/%{name}-%{ups_version}.tar.gz
+Source: http://www.go-ooo.org/packages/SRC680/%{name}-%{ups_version}.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 License: LGPLv2+
 BuildRequires: libwpd-devel >= 0.8.8
@@ -94,4 +94,4 @@ rm -rf %{buildroot}
 
 %files docs
 %defattr(644,root,root,755)
-%{_docdir}/libwpg-%{version}/*
+%{_docdir}/libwpg/*
