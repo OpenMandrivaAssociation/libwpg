@@ -1,4 +1,4 @@
-%define rel             3
+%define rel             4
 %define name            libwpg
 %define ups_version     0.1.3
 %define version         0.1.3
