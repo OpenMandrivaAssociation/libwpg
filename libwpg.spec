@@ -1,11 +1,11 @@
-%define rel             5
+%define rel             1
 %define name            libwpg
-%define ups_version     0.1.3
-%define version         0.1.3
+%define ups_version     0.2.0
+%define version         0.2.0
 %define release         %mkrel %{rel}
-%define api_version     0.1
-%define lib_major       1
-%define lib_name        %mklibname wpg- %{api_version} %{lib_major}
+%define api_version     0.2
+%define lib_major       2
+%define lib_name        %mklibname wpg %{api_version} %{lib_major}
 %define lib_name_devel  %mklibname -d wpg
 
 Name: %{name}
@@ -18,7 +18,7 @@ URL: http://libwpg.sf.net/
 Source: http://www.go-ooo.org/packages/SRC680/%{name}-%{ups_version}.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 License: LGPLv2+
-BuildRequires: libwpd-devel >= 0.8.8
+BuildRequires: libwpd-devel >= 0.9.0
 BuildRequires: doxygen
 
 %description
@@ -42,7 +42,7 @@ libwpg is a library for reading and converting WPG images
 %package -n %{lib_name_devel}
 Summary: Files for developing with libwpg
 Group: Development/C++
-Requires: %{lib_name}
+Requires: %{lib_name} = %{EVRD}
 Requires: libwpd-devel >= 0.8.0
 Provides: libwpg-devel = %{epoch}:%{version}-%{release}
 
@@ -64,7 +64,9 @@ Documentation of libwpg API for developing with libwpg
 %make
 
 %install
-make install DESTDIR=%{buildroot}
+rm -fr %buildroot
+%makeinstall_std
+
 rm -rf %{buildroot}/%{_libdir}/libwpg*.la
 
 %clean
@@ -84,7 +86,7 @@ rm -rf %{buildroot}
 %files -n %{lib_name}
 %defattr(644,root,root,755)
 %doc ChangeLog README COPYING AUTHORS
-%{_libdir}/libwpg*.so.*
+%{_libdir}/libwpg-%{api_version}.so.%{lib_major}*
 
 %files -n %{lib_name_devel}
 %defattr(644,root,root,755)
