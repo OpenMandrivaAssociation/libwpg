@@ -92,7 +92,7 @@ rm -rf %{buildroot}
 %defattr(644,root,root,755)
 %{_libdir}/libwpg*.so
 %{_libdir}/pkgconfig/libwpg*.pc
-%{_includedir}/libwpg-0.1/libwpg
+%{_includedir}/*
 
 %files docs
 %defattr(644,root,root,755)
