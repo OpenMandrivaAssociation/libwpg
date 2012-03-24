@@ -1,25 +1,20 @@
-%define rel             1
-%define name            libwpg
-%define ups_version     0.2.0
-%define version         0.2.0
-%define release         %mkrel %{rel}
-%define api_version     0.2
-%define lib_major       2
-%define lib_name        %mklibname wpg %{api_version} %{lib_major}
-%define lib_name_devel  %mklibname -d wpg
+%define api		0.2
+%define major	2
+%define libname        %mklibname wpg %{api} %{major}
+%define develname  %mklibname -d wpg
 
-Name: %{name}
-Summary: Library for importing and converting Corel WordPerfect(tm) Graphics images
-Epoch: 1
-Version: %{version}
-Release: %{release}
-Group: Office
-URL: http://libwpg.sf.net/
-Source: http://www.go-ooo.org/packages/SRC680/%{name}-%{ups_version}.tar.bz2
-BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
-License: LGPLv2+
-BuildRequires: libwpd-devel >= 0.9.0
+Summary:	Library for importing and converting Corel WordPerfect(tm) Graphics images
+Name:		libwpg
+Epoch:		1
+Version:	0.2.1
+Release:	1
+Group:		Office
+License:	LGPLv2+
+URL:		http://libwpg.sf.net/
+Source0:	http://downloads.sourceforge.net/project/libwpg/libwpg/libwpg-%{version}/%{name}-%{version}.tar.xz
+
 BuildRequires: doxygen
+BuildRequires: pkgconfig(libwpd-0.9)
 
 %description
 libwpg is a library for reading and converting WPG images
@@ -32,21 +27,20 @@ Group: Publishing
 Tools to convert WPG images into other formats.
 Currently supported: raw svg
 
-%package -n %{lib_name}
+%package -n %{libname}
 Summary: Library for importing and converting Corel WordPerfect(tm) Graphics images
 Group: System/Libraries
 
-%description -n %{lib_name}
+%description -n %{libname}
 libwpg is a library for reading and converting WPG images
 
-%package -n %{lib_name_devel}
+%package -n %{develname}
 Summary: Files for developing with libwpg
 Group: Development/C++
-Requires: %{lib_name} = %{EVRD}
-Requires: libwpd-devel >= 0.8.0
-Provides: libwpg-devel = %{epoch}:%{version}-%{release}
+Requires: %{libname} = %{EVRD}
+Provides: libwpg-devel = %{EVRD}
 
-%description -n %{lib_name_devel}
+%description -n %{develname}
 Includes and definitions for developing with libwpg.
 
 %package docs
@@ -57,43 +51,29 @@ Group: Development/C++
 Documentation of libwpg API for developing with libwpg
 
 %prep
-%setup -q -n %{name}-%{ups_version}
+%setup -q
 
 %build
-%configure2_5x
-%make
+%configure2_5x \
+	--disable-static
+
+%make 
+#LIBS='-lwpd-stream-0.9'
 
 %install
-rm -fr %buildroot
 %makeinstall_std
 
-rm -rf %{buildroot}/%{_libdir}/libwpg*.la
-
-%clean
-rm -rf %{buildroot}
-
-%if %mdkversion < 200900
-%post -n %{lib_name} -p /sbin/ldconfig
-%endif
-%if %mdkversion < 200900
-%postun -n %{lib_name} -p /sbin/ldconfig
-%endif
-
 %files tools
-%defattr(755,root,root,755)
+%doc ChangeLog README COPYING AUTHORS
 %{_bindir}/wpg2*
 
-%files -n %{lib_name}
-%defattr(644,root,root,755)
-%doc ChangeLog README COPYING AUTHORS
-%{_libdir}/libwpg-%{api_version}.so.%{lib_major}*
+%files -n %{libname}
+%{_libdir}/libwpg-%{api}.so.%{major}*
 
-%files -n %{lib_name_devel}
-%defattr(644,root,root,755)
+%files -n %{develname}
 %{_libdir}/libwpg*.so
 %{_libdir}/pkgconfig/libwpg*.pc
 %{_includedir}/*
 
 %files docs
-%defattr(644,root,root,755)
 %{_docdir}/libwpg/*
