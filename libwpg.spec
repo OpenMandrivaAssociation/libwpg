@@ -49,9 +49,9 @@ Includes and definitions for developing with libwpg.
 %setup -q
 
 %build
-%configure2_5x \
-	--disable-static
-
+CFLAGS="%{optflags} -Qunused-arguments" \
+CXXFLAGS="%{optflags} -Qunused-arguments" \
+%configure
 %make 
 
 %install
