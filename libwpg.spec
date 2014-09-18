@@ -49,8 +49,6 @@ Includes and definitions for developing with libwpg.
 %setup -q
 
 %build
-CFLAGS="%{optflags} -Qunused-arguments" \
-CXXFLAGS="%{optflags} -Qunused-arguments" \
 %configure
 %make 
 
