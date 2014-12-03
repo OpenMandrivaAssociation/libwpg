@@ -7,7 +7,7 @@ Summary:	Library for importing and converting Corel WordPerfect(tm) Graphics ima
 Name:		libwpg
 Epoch:		1
 Version:	0.3.0
-Release:	1
+Release:	1.1
 Group:		Office
 License:	LGPLv2+
 Url:		http://libwpg.sf.net/
@@ -19,7 +19,7 @@ BuildRequires:	pkgconfig(librevenge-0.0)
 
 
 %description
-libwpg is a library for reading and converting WPG images
+libwpg is a library for reading and converting WPG images.
 
 %package tools
 Summary:	Tools to convert WPG images into other formats
@@ -27,14 +27,14 @@ Group:		Publishing
 
 %description tools
 Tools to convert WPG images into other formats.
-Currently supported: raw svg
+Currently supported: raw svg.
 
 %package -n %{libname}
 Summary:	Library for importing and converting Corel WordPerfect(tm) Graphics images
 Group:		System/Libraries
 
 %description -n %{libname}
-libwpg is a library for reading and converting WPG images
+libwpg is a library for reading and converting WPG images.
 
 %package -n %{devname}
 Summary:	Files for developing with libwpg
