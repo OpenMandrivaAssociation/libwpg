@@ -49,7 +49,7 @@ Includes and definitions for developing with libwpg.
 %setup -q
 
 %build
-%configure
+%configure2_5x
 %make 
 
 %install
