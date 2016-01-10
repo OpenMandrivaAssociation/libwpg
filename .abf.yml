@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   libwpg-0.3.0.tar.xz: ff4666d9f55faa2cefb79b4f5d2f718ca7fb4709
+sources:
+  libwpg-0.3.1.tar.xz: 0ced45e5f8822cf3bdc9e870abb465e73f4de9d9
