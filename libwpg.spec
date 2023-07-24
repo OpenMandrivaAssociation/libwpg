@@ -6,8 +6,8 @@
 Summary:	Library for importing and converting Corel WordPerfect(tm) Graphics images
 Name:		libwpg
 Epoch:		1
-Version:	0.3.3
-Release:	5
+Version:	0.3.4
+Release:	1
 Group:		Office
 License:	LGPLv2+
 Url:		http://libwpg.sf.net/
