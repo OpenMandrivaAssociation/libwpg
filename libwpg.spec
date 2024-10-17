@@ -10,7 +10,7 @@ Version:	0.3.4
 Release:	1
 Group:		Office
 License:	LGPLv2+
-Url:		http://libwpg.sf.net/
+Url:		https://libwpg.sf.net/
 Source0:	http://downloads.sourceforge.net/project/libwpg/libwpg/libwpg-%{version}/%{name}-%{version}.tar.xz
 
 BuildRequires:	doxygen
