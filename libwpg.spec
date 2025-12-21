@@ -13,6 +13,11 @@ License:	LGPLv2+
 Url:		https://libwpg.sf.net/
 Source0:	http://downloads.sourceforge.net/project/libwpg/libwpg/libwpg-%{version}/%{name}-%{version}.tar.xz
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	doxygen
 BuildRequires:	pkgconfig(libwpd-0.10)
 BuildRequires:	pkgconfig(librevenge-0.0)
